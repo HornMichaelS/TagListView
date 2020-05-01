@@ -11,30 +11,30 @@ import UIKit
 @IBDesignable
 open class TagView: UIButton {
 
-    @IBInspectable open var cornerRadius: CGFloat = 0 {
+    @IBInspectable open var tagCornerRadius: CGFloat = 0 {
         didSet {
-            layer.cornerRadius = cornerRadius
-            layer.masksToBounds = cornerRadius > 0
+            layer.cornerRadius = tagCornerRadius
+            layer.masksToBounds = tagCornerRadius > 0
         }
     }
-    @IBInspectable open var borderWidth: CGFloat = 0 {
+    @IBInspectable open var tagBorderWidth: CGFloat = 0 {
         didSet {
-            layer.borderWidth = borderWidth
+            layer.borderWidth = tagBorderWidth
         }
     }
     
-    @IBInspectable open var borderColor: UIColor? {
+    @IBInspectable open var tagBorderColor: UIColor? {
         didSet {
             reloadStyles()
         }
     }
     
-    @IBInspectable open var textColor: UIColor = UIColor.white {
+    @IBInspectable open var tagTextColor: UIColor = UIColor.white {
         didSet {
             reloadStyles()
         }
     }
-    @IBInspectable open var selectedTextColor: UIColor = UIColor.white {
+    @IBInspectable open var tagSelectedTextColor: UIColor = UIColor.white {
         didSet {
             reloadStyles()
         }
@@ -97,13 +97,13 @@ open class TagView: UIButton {
         }
         else if isSelected {
             backgroundColor = selectedBackgroundColor ?? tagBackgroundColor
-            layer.borderColor = selectedBorderColor?.cgColor ?? borderColor?.cgColor
-            setTitleColor(selectedTextColor, for: UIControl.State())
+            layer.borderColor = selectedBorderColor?.cgColor ?? tagBorderColor?.cgColor
+            setTitleColor(tagSelectedTextColor, for: UIControl.State())
         }
         else {
             backgroundColor = tagBackgroundColor
-            layer.borderColor = borderColor?.cgColor
-            setTitleColor(textColor, for: UIControl.State())
+            layer.borderColor = tagBorderColor?.cgColor
+            setTitleColor(tagTextColor, for: UIControl.State())
         }
     }
     
