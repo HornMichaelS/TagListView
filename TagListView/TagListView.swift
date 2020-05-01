@@ -19,7 +19,7 @@ open class TagListView: UIView {
     @IBInspectable open dynamic var textColor: UIColor = .white {
         didSet {
             tagViews.forEach {
-                $0.tagTextColor = textColor
+                $0.textColor = textColor
             }
         }
     }
@@ -27,7 +27,7 @@ open class TagListView: UIView {
     @IBInspectable open dynamic var selectedTextColor: UIColor = .white {
         didSet {
             tagViews.forEach {
-                $0.tagSelectedTextColor = selectedTextColor
+                $0.selectedTextColor = selectedTextColor
             }
         }
     }
@@ -67,14 +67,14 @@ open class TagListView: UIView {
     @IBInspectable open dynamic var cornerRadius: CGFloat = 0 {
         didSet {
             tagViews.forEach {
-                $0.tagCornerRadius = cornerRadius
+                $0.cornerRadius = cornerRadius
             }
         }
     }
     @IBInspectable open dynamic var borderWidth: CGFloat = 0 {
         didSet {
             tagViews.forEach {
-                $0.tagBorderWidth = borderWidth
+                $0.borderWidth = borderWidth
             }
         }
     }
@@ -82,7 +82,7 @@ open class TagListView: UIView {
     @IBInspectable open dynamic var borderColor: UIColor? {
         didSet {
             tagViews.forEach {
-                $0.tagBorderColor = borderColor
+                $0.borderColor = borderColor
             }
         }
     }
@@ -330,15 +330,15 @@ open class TagListView: UIView {
     private func createNewTagView(_ title: String) -> TagView {
         let tagView = TagView(title: title)
         
-        tagView.tagTextColor = textColor
-        tagView.tagSelectedTextColor = selectedTextColor
+        tagView.textColor = textColor
+        tagView.selectedTextColor = selectedTextColor
         tagView.tagBackgroundColor = tagBackgroundColor
         tagView.highlightedBackgroundColor = tagHighlightedBackgroundColor
         tagView.selectedBackgroundColor = tagSelectedBackgroundColor
         tagView.titleLineBreakMode = tagLineBreakMode
-        tagView.tagCornerRadius = cornerRadius
-        tagView.tagBorderWidth = borderWidth
-        tagView.tagBorderColor = borderColor
+        tagView.cornerRadius = cornerRadius
+        tagView.borderWidth = borderWidth
+        tagView.borderColor = borderColor
         tagView.selectedBorderColor = selectedBorderColor
         tagView.paddingX = paddingX
         tagView.paddingY = paddingY
